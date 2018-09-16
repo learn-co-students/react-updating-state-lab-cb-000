@@ -5,17 +5,15 @@ class YouTubeDebugger extends React.Component {
     super();
 
     this.state = {
-      js {
-        errors: [],
-        user: null,
-        settings: {
-          bitrate: 8,
-          video: {
-            resolution: '1080p'
-          }
+      errors: [],
+      user: null,
+      settings: {
+        bitrate: 8,
+        video: {
+          resolution: '1080p'
         }
       }
-    } // state
+    }; // state
   } // constructor
 
   handleChangeBitrate = () => {
@@ -40,15 +38,15 @@ class YouTubeDebugger extends React.Component {
   }
 
   render() {
-    const bitrate = this.state.js.settings.bitrate;
-    const resolution = this.state.js.settings.video.resolution;
+    const bitrate = this.state.settings.bitrate;
+    const resolution = this.state.settings.video.resolution;
 
     return (
       <div>
-        <button className="bitrate" onClick={handleChangeBitrate}>
+        <button className="bitrate" onClick={this.handleChangeBitrate}>
           Bitrate: {bitrate}
         </button>
-        <button className="Resolution" onClick={handleChangeResolution}>
+        <button className="resolution" onClick={this.handleChangeResolution}>
           Resolution: {resolution}
         </button>
       </div>
